@@ -1,0 +1,357 @@
+#銃のプレイヤーデータリセット
+on join:
+    clear {gun.playerdata::%player%::cooldown::*}
+    clear {gun.playerdata::%player%::*}
+
+on load: #武器の登録処理
+    #登録リセット
+    clear {gun.dname::*}
+    clear {gun.id::*}
+    clear {gun.itemdata::*}
+    clear {gun.cooldown::*}
+    clear {gun.maxammo::*}
+    clear {gun.reloadtime::*}
+    clear {gun.dmg::*}
+    clear {gun.kb::*}
+    clear {gun.ammonum::*}
+    clear {gun.scatter::*}
+    clear {gun.dec_di::*}
+    clear {gun.dec_dmg::*}
+
+    #アサルトライフル登録
+    set {_gun.id} to "assult"
+    set {gun.dname::%{_gun.id}%} to "&e&lアサルトライフル"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to diamond hoe named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 3
+    set {gun.maxammo::%{_gun.id}%} to 20
+    set {gun.reloadtime::%{_gun.id}%} to 60
+    set {gun.dmg::%{_gun.id}%} to 3
+    set {gun.kb::%{_gun.id}%} to 0.5
+    set {gun.ammonum::%{_gun.id}%} to 1
+    set {gun.dec_di::%{_gun.id}%} to 5
+    set {gun.dec_dmg::%{_gun.id}%} to 0.1
+    set {gun.type::%{_gun.id}%} to "snowball"
+    set {gun.ammospeed::%{_gun.id}%} to 3
+
+    #スペシャルライフル
+    set {_gun.id} to "special"
+    set {gun.dname::%{_gun.id}%} to "&d&lスペシャルライフル"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to netherite hoe named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 0
+    set {gun.maxammo::%{_gun.id}%} to 10
+    set {gun.reloadtime::%{_gun.id}%} to 1
+    set {gun.dmg::%{_gun.id}%} to 2
+    set {gun.kb::%{_gun.id}%} to 1
+    set {gun.ammonum::%{_gun.id}%} to 1
+    set {gun.dec_di::%{_gun.id}%} to 3
+    set {gun.dec_dmg::%{_gun.id}%} to 0.1
+    set {gun.type::%{_gun.id}%} to "snowball"
+    set {gun.ammospeed::%{_gun.id}%} to 1
+
+    #ショットガン登録
+    set {_gun.id} to "shotgun"
+    set {gun.dname::%{_gun.id}%} to "&e&lショットガン"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to golden axe named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 15
+    set {gun.maxammo::%{_gun.id}%} to 5
+    set {gun.reloadtime::%{_gun.id}%} to 40
+    set {gun.dmg::%{_gun.id}%} to 8
+    set {gun.kb::%{_gun.id}%} to 0.5
+    set {gun.ammonum::%{_gun.id}%} to 10
+    set {gun.scatter::%{_gun.id}%} to 0.5
+    set {gun.dec_di::%{_gun.id}%} to 3
+    set {gun.dec_dmg::%{_gun.id}%} to 0.5
+    set {gun.type::%{_gun.id}%} to "snowball"
+    set {gun.ammospeed::%{_gun.id}%} to 3
+
+    #リボルバー登録
+    set {_gun.id} to "revolver"
+    set {gun.dname::%{_gun.id}%} to "&e&lリボルバー"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to netherite hoe named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 10
+    set {gun.maxammo::%{_gun.id}%} to 5
+    set {gun.reloadtime::%{_gun.id}%} to 40
+    set {gun.dmg::%{_gun.id}%} to 7
+    set {gun.kb::%{_gun.id}%} to 0.6
+    set {gun.dec_di::%{_gun.id}%} to 5
+    set {gun.dec_dmg::%{_gun.id}%} to 0.5
+    set {gun.ammonum::%{_gun.id}%} to 1
+    set {gun.type::%{_gun.id}%} to "snowball"
+    set {gun.ammospeed::%{_gun.id}%} to 3
+    set {gun.soundtype::%{_gun.id}%} to "heavy"
+
+    #SMG登録
+    set {_gun.id} to "smg"
+    set {gun.dname::%{_gun.id}%} to "&e&lSMG"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to iron shovel named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 0
+    set {gun.maxammo::%{_gun.id}%} to 30
+    set {gun.reloadtime::%{_gun.id}%} to 30
+    set {gun.dmg::%{_gun.id}%} to 1
+    set {gun.kb::%{_gun.id}%} to 0.1
+    set {gun.ammonum::%{_gun.id}%} to 1
+    set {gun.scatter::%{_gun.id}%} to 0.1
+    set {gun.dec_di::%{_gun.id}%} to 3
+    set {gun.dec_dmg::%{_gun.id}%} to 0.2
+    set {gun.type::%{_gun.id}%} to "snowball"
+    set {gun.ammospeed::%{_gun.id}%} to 3
+
+    #ナイフ登録
+    set {_gun.id} to "knife"
+    set {gun.dname::%{_gun.id}%} to "&e&lナイフ"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to iron sword named "&e&l%{gun.dname::%{_gun.id}%}%"
+
+    #スナイパーライフル登録
+    set {_gun.id} to "sr"
+    set {gun.dname::%{_gun.id}%} to "&e&lスナイパーライフル"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to stone hoe named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 10
+    set {gun.maxammo::%{_gun.id}%} to 10
+    set {gun.reloadtime::%{_gun.id}%} to 10
+    set {gun.dmg::%{_gun.id}%} to 15
+    set {gun.kb::%{_gun.id}%} to 0.4
+    set {gun.ammonum::%{_gun.id}%} to 1
+    set {gun.scatter::%{_gun.id}%} to 0
+    set {gun.dec_di::%{_gun.id}%} to 10
+    set {gun.dec_dmg::%{_gun.id}%} to 0.8
+    set {gun.type::%{_gun.id}%} to "snowball"
+    set {gun.ammospeed::%{_gun.id}%} to 5
+
+    #ロケットランチャー登録
+    set {_gun.id} to "rocketlauncher"
+    set {gun.dname::%{_gun.id}%} to "&e&lロケットランチャー"
+    set {gun.id::%{gun.dname::%{_gun.id}%}%} to {_gun.id}
+    set {gun.itemdata::%{_gun.id}%} to diamond sword named "&e&l%{gun.dname::%{_gun.id}%}%"
+    set {gun.cooldown::%{_gun.id}%} to 5
+    set {gun.maxammo::%{_gun.id}%} to 1
+    set {gun.reloadtime::%{_gun.id}%} to 160
+    set {gun.dmg::%{_gun.id}%} to 20
+    set {gun.kb::%{_gun.id}%} to 0.5
+    set {gun.ammonum::%{_gun.id}%} to 1
+    set {gun.scatter::%{_gun.id}%} to 0
+    set {gun.dec_di::%{_gun.id}%} to 0
+    set {gun.dec_dmg::%{_gun.id}%} to 0
+    set {gun.type::%{_gun.id}%} to "fireball"
+    set {gun.ammospeed::%{_gun.id}%} to 2
+
+#一般コマンド
+command /gun [<text>] [<text>]:
+    permission: admin
+    trigger:
+        if arg-1 is not set:
+            gun_show_help(player)
+        else if arg-2 is not set:   
+            gun_show_help(player)
+        else if arg-1 is "get":
+            if {gun.dname::%arg-2%} is set:
+                send "%{gun.dname::%arg-2%}%&aを入手しました。" to player
+                give {gun.itemdata::%arg-2%} to player
+            else:
+                send "&cその銃は存在しません。" to player
+
+#Tab補填の定義
+on tab complete of "/gun":
+    if tab arg-1 is not set:
+        add "get" to tab completions for position 1
+    else if tab arg-2 is not set:
+        loop {gun.id::*}:
+            add loop-value to tab completions for position 2
+
+#関数定義
+function gun_show_help(p: player):
+    send "&r" to {_p}
+    send "&a&l/gunの使い方" to {_p}
+    send "&3&l・&b/gun get <名前> &7- &f銃を入手します。" to {_p}
+
+#以下全武器に関する処理
+
+on right click:
+    loop {gun.itemdata::*}:
+        if player's tool is loop-value:
+            if {gun.type::%{gun.id::%name of loop-value%}%} is set:
+                if {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value%}%} is more than 0:
+                    if {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%} is not set:
+                        if {gun.playerdata::%player%::cooldown::%{gun.id::%name of loop-value%}%} is not set:
+                            remove 1 from {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value%}%}
+                            set {gun.playerdata::%player%::cooldown::%{gun.id::%name of loop-value%}%} to true
+                            if {gun.ammonum::%{gun.id::%name of loop-value%}%} is 1:
+                                if {gun.cooldown::%{gun.id::%name of loop-value%}%} is 0:
+                                    loop 10 times:
+                                        if {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value-1%}%} is more than 0:
+                                            if {gun.type::%{gun.id::%name of loop-value-1%}%} is "snowball":
+                                                shoot snowball at speed {gun.ammospeed::%{gun.id::%name of loop-value-1%}%}
+                                                set metadata value "gun_shooter" of last shot snowball to player
+                                            else if {gun.type::%{gun.id::%name of loop-value-1%}%} is "arrow":
+                                                shoot arrow at speed {gun.ammospeed::%{gun.id::%name of loop-value-1%}%}
+                                                set metadata value "gun_shooter" of last shot arrow to player
+                                            tdm_sound(player, {gun.soundtype::%{gun.id::%name of loop-value-1%}%})
+                                            remove 1 from {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value-1%}%}
+                                            wait 2 tick
+                                else:
+                                    if {gun.type::%{gun.id::%name of loop-value%}%} is "snowball":
+                                        shoot snowball at speed {gun.ammospeed::%{gun.id::%name of loop-value%}%}
+                                        set metadata value "gun_shooter" of last shot snowball to player
+                                    else if {gun.type::%{gun.id::%name of loop-value%}%} is "arrow":
+                                        shoot arrow at speed {gun.ammospeed::%{gun.id::%name of loop-value%}%}
+                                        set metadata value "gun_shooter" of last shot arrow to player
+                                    else if {gun.type::%{gun.id::%name of loop-value%}%} is "fireball":
+                                        shoot fireball at speed {gun.ammospeed::%{gun.id::%name of loop-value%}%}
+                                    tdm_sound(player, {gun.soundtype::%{gun.id::%name of loop-value%}%})
+                            else:
+                                loop {gun.ammonum::%{gun.id::%name of loop-value%}%} times:
+                                    set {_v} to vector from yaw player's yaw and pitch player's pitch
+                                    set {_v2} to {_v}
+                                    set {_rx} to random number between -1*{gun.scatter::%{gun.id::%name of loop-value-1%}%}/2 and {gun.scatter::%{gun.id::%name of loop-value-1%}%}/2
+                                    set {_ry} to random number between -1*{gun.scatter::%{gun.id::%name of loop-value-1%}%}/2 and {gun.scatter::%{gun.id::%name of loop-value-1%}%}/2
+                                    set {_rz} to random number between -1*{gun.scatter::%{gun.id::%name of loop-value-1%}%}/2 and {gun.scatter::%{gun.id::%name of loop-value-1%}%}/2
+                                    remove {_rx} from x of {_v2}
+                                    remove {_ry} from y of {_v2}
+                                    remove {_rz} from z of {_v2}
+                                    if {gun.type::%{gun.id::%name of loop-value-1%}%} is "snowball":
+                                        shoot snowball at speed {gun.ammospeed::%{gun.id::%name of loop-value-1%}%} {_v2}
+                                    else if {gun.type::%{gun.id::%name of loop-value-1%}%} is "arrow":
+                                        shoot arrow at speed {gun.ammospeed::%{gun.id::%name of loop-value-1%}%} {_v2}
+                                    tdm_sound(player, {gun.soundtype::%{gun.id::%name of loop-value-1%}%})
+                            loop {gun.cooldown::%{gun.id::%name of loop-value%}%} times:
+                                wait 1 tick
+                            clear {gun.playerdata::%player%::cooldown::%{gun.id::%name of loop-value%}%}
+                else:
+                    if {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%} is not set:
+                        set {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%} to {gun.reloadtime::%{gun.id::%name of loop-value%}%}
+                        tdm_sound(player, "reload")
+                        loop {gun.reloadtime::%{gun.id::%name of loop-value%}%} times:
+                            remove 1 from {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value-1%}%}
+                            wait 1 tick
+                        clear {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%}
+                        if {tdm.playerdata.kit::%player%} is "ammo":
+                            set {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value%}%} to {gun.maxammo::%{gun.id::%name of loop-value%}%} * 2
+                        else:
+                            set {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value%}%} to {gun.maxammo::%{gun.id::%name of loop-value%}%}
+                exit loop
+
+
+every tick:
+    loop all players:
+        loop {gun.itemdata::*}:
+            if loop-player's tool is loop-value-2:
+                if {tdm.playerdata.kit::%loop-player%} is "ammo": 
+                    if {gun.playerdata.%loop-player%::ammo::%{gun.id::%name of loop-value-2%}%} is not set:
+                        set {gun.playerdata.%loop-player%::ammo::%{gun.id::%name of loop-value-2%}%} to {gun.maxammo::%{gun.id::%name of loop-value-2%}%} * 2
+                    if {gun.type::%{gun.id::%name of loop-value-2%}%} is set:
+                        if {gun.playerdata.%loop-player%::reload::%{gun.id::%name of loop-value-2%}%} is not set:
+                            send action bar "&e&l%{gun.dname::%{gun.id::%name of loop-value-2%}%}% &3- &7弾薬: &c%{gun.playerdata.%loop-player%::ammo::%{gun.id::%name of loop-value-2%}%}%&7/%{gun.maxammo::%{gun.id::%name of loop-value-2%}%} * 2%" to loop-player
+                        else:
+                            send action bar "&e&l%{gun.dname::%{gun.id::%name of loop-value-2%}%}% &3- &7弾薬: &cリロード中... %{gun.playerdata.%loop-player%::reload::%{gun.id::%name of loop-value-2%}%} * 2%" to loop-player
+                        exit loop
+                    else:
+                        send action bar "&e&l%{gun.dname::%{gun.id::%name of loop-value-2%}%}% &3- &7弾薬: &c∞" to loop-player
+                else:
+                    if {gun.playerdata.%loop-player%::ammo::%{gun.id::%name of loop-value-2%}%} is not set:
+                        set {gun.playerdata.%loop-player%::ammo::%{gun.id::%name of loop-value-2%}%} to {gun.maxammo::%{gun.id::%name of loop-value-2%}%}
+                    if {gun.type::%{gun.id::%name of loop-value-2%}%} is set:
+                        if {gun.playerdata.%loop-player%::reload::%{gun.id::%name of loop-value-2%}%} is not set:
+                            send action bar "&e&l%{gun.dname::%{gun.id::%name of loop-value-2%}%}% &3- &7弾薬: &c%{gun.playerdata.%loop-player%::ammo::%{gun.id::%name of loop-value-2%}%}%&7/%{gun.maxammo::%{gun.id::%name of loop-value-2%}%}%" to loop-player
+                        else:
+                            send action bar "&e&l%{gun.dname::%{gun.id::%name of loop-value-2%}%}% &3- &7弾薬: &cリロード中... %{gun.playerdata.%loop-player%::reload::%{gun.id::%name of loop-value-2%}%}%" to loop-player
+                        exit loop
+                    else:
+                        send action bar "&e&l%{gun.dname::%{gun.id::%name of loop-value-2%}%}% &3- &7弾薬: &c∞" to loop-player
+
+on drop: #リロード
+    if name of event-item is set:
+        cancel event
+        wait a tick
+        loop {gun.itemdata::*}:
+            if player's tool is loop-value:
+                if {gun.type::%{gun.id::%name of loop-value%}%} is set:
+                    if {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%} is not set:
+                        set {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%} to {gun.reloadtime::%{gun.id::%name of loop-value%}%}
+                        tdm_sound(player, "reload")
+                        loop {gun.reloadtime::%{gun.id::%name of loop-value%}%} times:
+                            remove 1 from {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value-1%}%}
+                            wait 1 tick
+                        clear {gun.playerdata.%player%::reload::%{gun.id::%name of loop-value%}%}
+                        if {tdm.playerdata.kit::%player%} is "ammo":
+                            set {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value%}%} to {gun.maxammo::%{gun.id::%name of loop-value%}%} * 2
+                        else:
+                            set {gun.playerdata.%player%::ammo::%{gun.id::%name of loop-value%}%} to {gun.maxammo::%{gun.id::%name of loop-value%}%}
+
+on damage:
+    projectile exists
+    projectile is a snowball
+    if metadata value "gun" of projectile is set:
+        if difference between metadata value "lastspawn" of victim and unix timestamp of now is more than 10+1:
+            if {tdm.red::*} contains victim:
+                if {tdm.red::*} contains attacker:
+                    cancel event
+                    exit
+            else if {tdm.blue::*} contains victim:
+                if {tdm.blue::*} contains attacker:
+                    cancel event
+                    exit
+
+        play sound "entity.experience_orb.pickup" to attacker
+        set {_v} to vector of projectile
+        set y of {_v} to (y of vector of projectile)-(y of vector of victim)
+        set {_dis} to distance between victim and (metadata value "gun_dloc" of projectile)
+        if {gun.dec_di::%metadata value "gun" of projectile%} is set:
+            if {gun.dec_dmg::%metadata value "gun" of projectile%} is set:
+                if mod({_dis}, {gun.dec_di::%metadata value "gun" of projectile%}) is more than 0:
+                    set {_dec} to (({_dis}-mod({_dis}, {gun.dec_di::%metadata value "gun" of projectile%}))/{gun.dec_di::%metadata value "gun" of projectile%})*{gun.dec_dmg::%metadata value "gun" of projectile%}
+        set {_dmg} to {gun.dmg::%metadata value "gun" of projectile%}-{_dec}
+        if {_dmg} is less than 0:
+            set {_dmg} to 0
+        else:
+            push victim {_v} at speed {gun.kb::%metadata value "gun" of projectile%}
+        set metadata value "lastdmgfrom" of victim to metadata value "gun_shooter" of event-projectile
+        set metadata value "lastdmgis" of victim to unix timestamp of now
+
+        #ヘッドショット処理
+        set {_projectileloc} to y location of event-projectile
+        set {_headloc} to y location of victim
+        set {_diff} to difference between {_projectileloc} and {_headloc}
+        if 1.8-{_diff} < 0.3: #ヘッドショット範囲であるかどうか
+            if distance between victim and attacker > 5: #誤検知防止
+                send title "" with subtitle "&c&lHeadShot!" to attacker
+                set {_dmg} to {_dmg}*1.2
+
+        remove {_dmg} from victim's health
+        wait a tick
+        set no damage tick of victim to 1
+
+on damage:
+    attacker is a player
+    loop {gun.itemdata::*}:
+        if loop-value is attacker's tool:
+            if {gun.type::%{gun.id::%name of loop-value%}%} is set:
+                add 1 to {_n}
+    if {_n} is set:
+        cancel event
+
+on shoot:
+    loop {gun.itemdata::*}:
+        if shooter's tool is loop-value:
+            set metadata value "gun" of event-projectile to "%{gun.id::%name of loop-value%}%"
+            set metadata value "gun_shooter" of event-projectile to shooter
+            set metadata value "gun_dloc" of event-projectile to location of shooter
+            if {gun.type::%{gun.id::%name of loop-value%}%} is "fireball":
+                while event-projectile is alive:
+                    wait 1 second
+                create an explosion of force 5 at event-projectile
+
+function tdm_sound(p: player, type: string):
+    if {_type} is "heavy":
+        play sound "minecraft:entity.zombie.attack_iron_door" with pitch 0.8 at location of {_p} 
+    else if {_type} is "reload":
+        play sound "minecraft:block.iron_door.open" with pitch 1.5 at location of {_p} 
+        wait a tick
+        play sound "minecraft:block.iron_door.close" with pitch 2 at location of {_p} 
+    else:
+        play sound "entity.zombie.attack_wooden_door" at location of {_p}
